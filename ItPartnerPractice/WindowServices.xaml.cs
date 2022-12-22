@@ -44,9 +44,9 @@ namespace ItPartnerPractice
         private void Update()
         {
             var services = App.Context.Services.ToList();
-            if (cbSort.Text == "По возрастанию")
-                services = services.OrderBy(p => p.PriceService).ToList();
             if (cbSort.Text == "По убыванию")
+                services = services.OrderBy(p => p.PriceService).ToList();
+            if (cbSort.Text == "По возрастанию")
                 services = services.OrderByDescending(p => p.PriceService).ToList();
             if (tbSearch.Text != null)
                 services = services.Where(p => p.ServiceName.ToLower().Contains(tbSearch.Text.ToLower()) || p.ServiceDescription.ToLower().Contains(tbSearch.Text.ToLower())|| p.PriceService.Contains(tbSearch.Text)).ToList();
