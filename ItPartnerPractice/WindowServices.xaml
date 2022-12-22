@@ -1,0 +1,103 @@
+﻿<Window x:Class="ItPartnerPractice.WindowServices"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ItPartnerPractice"
+        mc:Ignorable="d"
+        Title="Услуги" Height="450" Width="800" Closed="Window_Closed"
+        MinHeight="450" MinWidth="800"
+        Style="{StaticResource wdBackground}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="80"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition MinWidth="100" Width="100"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Image Source="/logoFinal.png" Grid.Column="0"></Image>
+            <TextBlock Grid.Column="1" Text="Услуги" VerticalAlignment="Center" HorizontalAlignment="Center"
+                       Grid.ColumnSpan="2" Name="textServices" Style="{StaticResource textTitle}"></TextBlock>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBox Name="tbSearch" Grid.Column="0" TextChanged="tbSearch_TextChanged" TextWrapping="Wrap"
+                     Style="{StaticResource TextBoxes}"></TextBox>
+            <TextBlock Name="textCounter" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Visibility="Hidden"></TextBlock>
+            <ComboBox Name="cbSort" Grid.Column="2" SelectionChanged="cbSort_SelectionChanged" Style="{StaticResource comboBoxes}">
+                <TextBlock Name="sortAscendant" Text="По возрастанию"></TextBlock>
+                <TextBlock Name="sortDescendant" Text="По убыванию"></TextBlock>
+            </ComboBox>
+        </Grid>
+        <Grid Grid.Row="2">
+            <ListView Name="ListServices">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition MinWidth="450"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0">
+                                <Image Name="imgService" Source="{Binding ImageService}" Stretch="Fill" MaxWidth="150" MaxHeight="150"></Image>
+                            </Grid>
+                            <Grid Grid.Column="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Grid.Row="0" Name="textServiceName" Text="{Binding NameService}" TextWrapping="Wrap"
+                                           Style="{StaticResource primaryText}"></TextBlock>
+                                <TextBlock Grid.Row="1" Name="textServiceDescription" Text="{Binding DescriptionService}" TextWrapping="Wrap"
+                                           Style="{StaticResource defaultText}"></TextBlock>
+                            </Grid>
+                            <Grid Grid.Column="2">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Grid.Row="0" Name="textServicePrice" Text="{Binding PriceService}"
+                                           Style="{StaticResource defaultText}"></TextBlock>
+                                <Button Grid.Row="1" Name="btnDeleteService" Content="Удалить"  Click="btnDeleteService_Click"
+                                        Style="{StaticResource btnForList}"></Button>
+                                <Button Grid.Row="2" Name="btnChangeService" Content="Изменить" Click="btnChangeService_Click"
+                                        Style="{StaticResource btnForList}"></Button>
+                            </Grid>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button Grid.Column="0" Grid.RowSpan="2" Content="Очистить фильтры" Name="btnClearFilters" Click="btnClearFilters_Click"
+                    Style="{StaticResource btnDefault}"></Button>
+            <Button Grid.Column="1" Content="Список заказов" Name="btnOrderList" Click="btnOrderList_Click"
+                    Style="{StaticResource btnDefault}"></Button>
+            <Button Grid.Column="2" Grid.RowSpan="2" Content="Добавить услугу" Name="btnServiceAdd" Click="btnServiceAdd_Click"
+                    Style="{StaticResource btnDefault}"></Button>
+            <Button Grid.Column="1" Grid.Row="1" Name="btnClientList" Content="Список клиентов" Click="btnClientList_Click"
+                    Style="{StaticResource btnDefault}"></Button>
+        </Grid>
+    </Grid>
+</Window>

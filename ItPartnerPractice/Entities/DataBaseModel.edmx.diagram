@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c256d4e79a75430ab0e4b339f4dca113" Name="Diagram1">
+        <EntityTypeShape EntityType="ItPartner10Model.Clients" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="ItPartner10Model.Orders" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ItPartner10Model.OrderStatus" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ItPartner10Model.Roles" Width="1.5" PointX="5.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ItPartner10Model.Services" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ItPartner10Model.ServicesInOrders" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="ItPartner10Model.Users" Width="1.5" PointX="8" PointY="5" IsExpanded="true" />
+        <AssociationConnector Association="ItPartner10Model.FK__Orders__ClientId__1ED998B2" ManuallyRouted="false" />
+        <AssociationConnector Association="ItPartner10Model.FK__Orders__OrderSta__1DE57479" ManuallyRouted="false" />
+        <AssociationConnector Association="ItPartner10Model.FK__ServicesI__Order__20C1E124" ManuallyRouted="false" />
+        <AssociationConnector Association="ItPartner10Model.FK__Users__RoleId__1CF15040" ManuallyRouted="false" />
+        <AssociationConnector Association="ItPartner10Model.FK__ServicesI__Servi__1FCDBCEB" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

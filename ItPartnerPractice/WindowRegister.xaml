@@ -1,0 +1,43 @@
+﻿<Window x:Class="ItPartnerPractice.WindowRegister"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ItPartnerPractice"
+        mc:Ignorable="d"
+        Title="Регистрация" Height="550" Width="300" MouseLeftButtonDown="Window_MouseLeftButtonDown"
+        Style="{StaticResource wdBackground}">
+    <Grid>
+        
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <StackPanel Orientation="Vertical">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Image Grid.Row="0" Source="/logoFinal.png" Width="100" Height="100"></Image>
+                    <TextBlock Grid.Row="1" Text="Регистрация" VerticalAlignment="Center" HorizontalAlignment="Center"
+                               Name="textRegister" Style="{StaticResource textTitleForSecondaryWindows}"></TextBlock>
+                </Grid>
+                <TextBlock Text="Логин:" Style="{StaticResource primaryText}"></TextBlock>
+                <TextBox Name="tbLogin" MaxLength="16" Style="{StaticResource TextBoxes}"></TextBox>
+                <TextBlock Name="textName" Text="Имя:" Style="{StaticResource primaryText}"></TextBlock>
+                <TextBox Name="tbName" MaxLength="50" Style="{StaticResource TextBoxes}"></TextBox>
+                <TextBlock Name="textSurname" Text="Фамилия:" Style="{StaticResource primaryText}"></TextBlock>
+                <TextBox Name="tbSurname" MaxLength="50" Style="{StaticResource TextBoxes}"></TextBox>
+                <TextBlock Name="textPassword" Text="Пароль:" Style="{StaticResource primaryText}"></TextBlock>
+                <PasswordBox Name="pbPassword" MaxLength="100" Style="{StaticResource PasswordBoxes}"></PasswordBox>
+                <TextBlock Text="Повторите пароль:" Style="{StaticResource primaryText}"></TextBlock>
+                <PasswordBox Name="pbRepeatPassword" MaxLength="100" Style="{StaticResource PasswordBoxes}"></PasswordBox>
+                <TextBlock TextWrapping="Wrap" Name="textInfo">Минимальная длина пароля: 6 символов<LineBreak/>
+                Минимальная длина логина: 6 символов</TextBlock>
+                <Button Content="Зарегистрироваться" Name="btnRegister" Click="btnRegister_Click" Margin="20"
+                        Style="{StaticResource btnDefault}"></Button>
+                <TextBlock Text="Назад" TextAlignment="Center" Name="textBack" MouseLeftButtonDown="textBack_MouseLeftButtonDown"
+                           MouseEnter="textBack_MouseEnter" MouseLeave="textBack_MouseLeave" TextDecorations="None"
+                           Style="{StaticResource textTitleForSecondaryWindows}"></TextBlock>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

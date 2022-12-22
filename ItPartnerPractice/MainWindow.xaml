@@ -1,0 +1,32 @@
+﻿<Window x:Class="ItPartnerPractice.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ItPartnerPractice"
+        mc:Ignorable="d"
+        Title="Авторизация" Height="320" Width="300" WindowStyle="None" ResizeMode="NoResize"
+        MouseLeftButtonDown="Window_MouseLeftButtonDown" Style="{StaticResource wdBackground}">
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel Orientation="Vertical">
+                <Image Source="/logoFinal.png" Width="100" Height="100"></Image>
+                <TextBlock Text="Логин:" Style="{StaticResource textTitleForSecondaryWindows}"></TextBlock>
+                <TextBox Width="150" Name="tbLogin" x:FieldModifier="public" MaxLength="16"
+                         Style="{StaticResource TextBoxes}"></TextBox>
+                <TextBlock Text="Пароль:" Style="{StaticResource textTitleForSecondaryWindows}"></TextBlock>
+                <PasswordBox Name="pbPassword" Margin="0,0,0,10" MaxLength="100"
+                             Style="{StaticResource PasswordBoxes}"></PasswordBox>
+                <Button Name="btnLogin" Content="Войти" Click="btnLogin_Click" Style="{StaticResource btnDefault}"></Button>
+                <TextBlock Margin="20" HorizontalAlignment="Center" Text="Зарегистрироваться" Name="textRegister"
+                           MouseLeftButtonDown="textRegister_MouseLeftButtonDown" MouseEnter="textRegister_MouseEnter"
+                           MouseLeave="textRegister_MouseLeave" TextDecorations="None" >
+                </TextBlock>
+                <TextBlock Text="Закрыть" HorizontalAlignment="Center" Margin="20" Name="textClose"
+                           MouseLeftButtonDown="textClose_MouseLeftButtonDown" MouseEnter="textClose_MouseEnter"
+                           MouseLeave="textClose_MouseLeave" TextDecorations="None"
+                           Style="{StaticResource textTitleForSecondaryWindows}"></TextBlock>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
