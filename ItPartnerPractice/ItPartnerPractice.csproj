@@ -224,5 +224,11 @@
       <LastGenOutput>DataBaseModel.cs</LastGenOutput>
     </Content>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClassLibraryPractice\ClassLibraryPractice.csproj">
+      <Project>{64d57267-ac3e-4f7c-9e14-930dcae349de}</Project>
+      <Name>ClassLibraryPractice</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
